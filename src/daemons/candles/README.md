@@ -1,13 +1,13 @@
 # Data Service Candles Daemon in Docker
 
 ## About the image
-This Docker image contains scripts and configs to run Data Service Candles Daemon. The image adds functionality to [Data Service](https://github.com/wavesplatform/data-service) to calculate and update DEX candles inside the Postgres database (see Requirements).
+This Docker image contains scripts and configs to run Data Service Candles Daemon. The image adds functionality to [Data Service](https://github.com/earthspay/data-service) to calculate and update DEX candles inside the Postgres database (see Requirements).
 
-Container downloads source code and configuration files from the [repository](https://github.com/wavesplatform/data-service) and runs it.  
+Container downloads source code and configuration files from the [repository](https://github.com/earthspay/data-service) and runs it.  
  
 ## Requirements ⚠️
 
-1. PostgreSQL 10 database with a table structure found in [wavesplatform/blockchain-postgres-sync](https://github.com/wavesplatform/blockchain-postgres-sync)
+1. PostgreSQL 10 database with a table structure found in [earthspay/blockchain-postgres-sync](https://github.com/earthspay/blockchain-postgres-sync)
 2. Downloaded and continuously updated blockchain data in the database
 2. Docker for running the service in a container
 
@@ -15,7 +15,7 @@ Container downloads source code and configuration files from the [repository](ht
 
 The simplest way to run a container:
 ```
-docker run -e PGHOST=*** -e PGDATABASE=*** -e PGUSER=*** -e PGPASSWORD=*** -it wavesplatform/candles-daemon
+docker run -e PGHOST=*** -e PGDATABASE=*** -e PGUSER=*** -e PGPASSWORD=*** -it earthspay/candles-daemon
 ```
 
 **You can run container with environment variables:**

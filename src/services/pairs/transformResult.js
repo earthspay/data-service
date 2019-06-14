@@ -11,7 +11,7 @@ const pickPairFields = pick([
   'weightedAveragePrice',
   'volume',
   'quoteVolume',
-  'volumeWaves',
+  'volumeEarths',
   'txsCount',
 ]);
 
@@ -19,7 +19,7 @@ const pickPairFields = pick([
 const renamePairFields = renameKeys({
   first_price: 'firstPrice',
   last_price: 'lastPrice',
-  volume_waves: 'volumeWaves',
+  volume_earths: 'volumeEarths',
   weighted_average_price: 'weightedAveragePrice',
   quote_volume: 'quoteVolume',
   txs_count: 'txsCount',

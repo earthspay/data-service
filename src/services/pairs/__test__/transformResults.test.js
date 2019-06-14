@@ -13,13 +13,13 @@ describe('sql query results transformation', () => {
         first_price: 1.2,
         last_price: 2.1,
         volume: 100.1,
-        volume_waves: 10.2,
+        volume_earths: 10.2,
       })
     ).toEqual({
       firstPrice: 1.2,
       lastPrice: 2.1,
       volume: 100.1,
-      volumeWaves: 10.2,
+      volumeEarths: 10.2,
     });
   });
 
@@ -32,7 +32,7 @@ describe('sql query results transformation', () => {
           first_price: 1.2,
           last_price: 2.1,
           volume: 100.1,
-          volume_waves: 10.2,
+          volume_earths: 10.2,
         },
       ])
     ).toEqual(
@@ -42,7 +42,7 @@ describe('sql query results transformation', () => {
             firstPrice: 1.2,
             lastPrice: 2.1,
             volume: 100.1,
-            volumeWaves: 10.2,
+            volumeEarths: 10.2,
           }),
           amountAsset: '111',
           priceAsset: '222',

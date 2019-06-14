@@ -1,6 +1,6 @@
 const Joi = require('./joi');
 
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@earths/data-entities');
 
 const validate = s => v => Joi.validate(v, s, { convert: false });
 const assertPass = x => expect(x.error).toBe(null);

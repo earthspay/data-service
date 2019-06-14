@@ -15,7 +15,7 @@ const COLUMNS = [
   'low',
   'weighted_average_price',
   'txs_count',
-  'volume_waves',
+  'volume_earths',
 ];
 
 type SearchWithLimitRequest = {
@@ -145,7 +145,7 @@ export const search = (req: SearchRequest): string => {
 
   const q = pg({ t: 'pairs' })
     .select(COLUMNS.map(column => `t.${column}`))
-    .orderByRaw('volume_waves desc NULLS LAST')
+    .orderByRaw('volume_earths desc NULLS LAST')
     .limit(limit);
 
   if (isSearchByAssetRequest(req)) {

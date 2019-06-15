@@ -3,7 +3,7 @@ const { parseDate } = require('../../utils/parseDate');
 const { parseBool } = require('../utils/parseBool');
 const { parseArrayQuery } = require('../utils/parseArrayQuery');
 
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@earths/data-entities');
 
 const parseValue = (type, value) => {
   if (type === 'boolean') return parseBool(value);

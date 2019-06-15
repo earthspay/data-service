@@ -14,7 +14,7 @@ const query = pairs =>
 const search = ({ limit }) =>
   pg({ t: 'pairs' })
     .select('*')
-    .orderByRaw('t.volume_waves desc NULLS LAST')
+    .orderByRaw('t.volume_earths desc NULLS LAST')
     .limit(limit)
     .toString();
 

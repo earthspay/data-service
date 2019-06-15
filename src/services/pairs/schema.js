@@ -48,7 +48,7 @@ const result = Joi.object().keys({
     .bignumber()
     .required(),
   txs_count: Joi.number().required(),
-  volume_waves: Joi.object()
+  volume_earths: Joi.object()
     .bignumber()
     .required()
     .allow(null),

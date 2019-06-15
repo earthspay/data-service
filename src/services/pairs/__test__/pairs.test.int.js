@@ -4,7 +4,7 @@ const loadConfig = require('../../../loadConfig');
 const options = loadConfig();
 const pgDriver = createPgDriver(options);
 const create = require('../index');
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@earths/data-entities');
 let pair;
 
 describe('Pairs', () => {
@@ -41,7 +41,7 @@ describe('Pairs', () => {
       expect(result.data).toHaveProperty('high', pair.high);
       expect(result.data).toHaveProperty('volume', pair.volume);
       expect(result.data).toHaveProperty('quoteVolume', pair.quote_volume);
-      expect(result.data).toHaveProperty('volumeWaves', pair.volume_waves);
+      expect(result.data).toHaveProperty('volumeEarths', pair.volume_earths);
       expect(result.data).toHaveProperty('weightedAveragePrice', pair.weighted_average_price);
       expect(result.data).toHaveProperty('txsCount', pair.txs_count);
     });
@@ -82,8 +82,8 @@ describe('Pairs', () => {
       expect(result.data[0].data).toHaveProperty('lastPrice', pair.last_price);
       expect(result.data[0].data).toHaveProperty('volume', pair.volume);
       expect(result.data[0].data).toHaveProperty(
-        'volumeWaves',
-        pair.volume_waves
+        'volumeEarths',
+        pair.volume_earths
       );
     });
 
@@ -121,7 +121,7 @@ describe('Pairs', () => {
         expect(pair.data.firstPrice).toBeInstanceOf(BigNumber);
         expect(pair.data.lastPrice).toBeInstanceOf(BigNumber);
         expect(pair.data.volume).toBeInstanceOf(BigNumber);
-        expect(pair.data.volumeWaves).toBeInstanceOf(BigNumber);
+        expect(pair.data.volumeEarths).toBeInstanceOf(BigNumber);
       });
     });
   });

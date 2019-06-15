@@ -4,7 +4,7 @@ const options = loadConfig();
 const create = require('../index');
 
 const amountAsset = 'AnERqFRffNVrCbviXbDEdzrU6ipXCP5Y1PKpFdRnyQAy';
-const priceAsset = 'WAVES';
+const priceAsset = 'EARTHS';
 
 describe('Candles', () => {
   const service = create({

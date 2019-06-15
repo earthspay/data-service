@@ -1,5 +1,5 @@
 const Monoid = require('../../types/Monoid');
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@earths/data-entities');
 
 // common
 const leftNotNullMonoid = new Monoid({

@@ -11,7 +11,7 @@ Object {
     "amount": "1",
     "assetPair": Object {
       "amountAsset": "BkFyeRdrLquxds5FenxyonyfTwMVJJ6o6L7VTaPr5fs3",
-      "priceAsset": "WAVES",
+      "priceAsset": "EARTHS",
     },
     "expiration": 2018-01-14T13:39:07.000Z,
     "id": "7tBBYWEQN6BKTAxKMTnwfyyQMzowoukhQd2gbeG8iv4G",
@@ -28,7 +28,7 @@ Object {
     "amount": "1",
     "assetPair": Object {
       "amountAsset": "BkFyeRdrLquxds5FenxyonyfTwMVJJ6o6L7VTaPr5fs3",
-      "priceAsset": "WAVES",
+      "priceAsset": "EARTHS",
     },
     "expiration": 2018-01-15T09:32:28.000Z,
     "id": "8JrPB7xdUJeDrjv1ea61qWiLSpPdpjgr6YVi9tmd8aTD",

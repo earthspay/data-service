@@ -42,7 +42,7 @@ Object {
 }
 `;
 
-exports[`Assets service search fetches WAVES by ticker 1`] = `
+exports[`Assets service search fetches EARTHS by ticker 1`] = `
 Object {
   "__type": "list",
   "data": Array [
@@ -51,13 +51,13 @@ Object {
       "data": Object {
         "description": "",
         "height": 0,
-        "id": "WAVES",
-        "name": "Waves",
+        "id": "EARTHS",
+        "name": "Earths",
         "precision": 8,
         "quantity": "10000000000000000",
         "reissuable": false,
         "sender": "",
-        "ticker": "WAVES",
+        "ticker": "EARTHS",
         "timestamp": 2016-04-11T18:00:00.000Z,
       },
     },

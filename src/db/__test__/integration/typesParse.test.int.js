@@ -1,4 +1,4 @@
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@earths/data-entities');
 
 const loadConfig = require('../../../loadConfig');
 const { pg: createDriverT } = require('../../driver');

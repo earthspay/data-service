@@ -1,4 +1,4 @@
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@earths/data-entities');
 
 const txExchange = {
   id: '8rEwYY4wQ4bkEkk95EiyeQnvnonX6TAnU6eiBAbVSADk',
@@ -14,7 +14,7 @@ const txExchange = {
   sender_public_key: '7kPFrHDiGw1rCm7LPszuECwWYL3dMf6iMifLRDJQZMzy',
 
   amount_asset: 'BkFyeRdrLquxds5FenxyonyfTwMVJJ6o6L7VTaPr5fs3',
-  price_asset: 'WAVES',
+  price_asset: 'EARTHS',
   price: new BigNumber('1'),
   amount: new BigNumber('1'),
 

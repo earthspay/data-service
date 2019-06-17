@@ -1,6 +1,6 @@
 const http = require('http');
 const createService = require('../index');
-const json = require('@waves/json-bigint');
+const json = require('@earths/json-bigint');
 
 // dependencies
 const { createPgDriver } = require('../../../db');
@@ -55,9 +55,9 @@ describe('Assets service', () => {
   });
 
   describe('search', () => {
-    it('fetches WAVES by ticker', async done => {
+    it('fetches EARTHS by ticker', async done => {
       service
-        .search({ ticker: 'WAVES' })
+        .search({ ticker: 'EARTHS' })
         .run()
         .promise()
         .then(xs => {
@@ -67,9 +67,9 @@ describe('Assets service', () => {
         .catch(e => done(JSON.stringify(e)));
     });
 
-    it('fetches non-WAVES asset by ticker (BTC)', async done => {
+    it('fetches non-EARTHS asset by ticker (BTC)', async done => {
       http.get(
-        'http://nodes.wavesnodes.com/assets/details/8LQW8f7P5d5PZM7GtZEBgaqRPGSzS3DfPuiXrURJ4AJS',
+        'http://nodes.earths.ga/assets/details/8LQW8f7P5d5PZM7GtZEBgaqRPGSzS3DfPuiXrURJ4AJS',
         res => {
           let data = '';
           res.on('data', chunk => (data += chunk));
@@ -106,9 +106,9 @@ describe('Assets service', () => {
         .promise()
         .then(as => {
           expect(as.data.length).toBeGreaterThan(100);
-          // make sure WAVES is included
+          // make sure EARTHS is included
           expect(
-            as.data.find(a => a.data.ticker === 'WAVES')
+            as.data.find(a => a.data.ticker === 'EARTHS')
           ).not.toBeUndefined();
           done();
         })

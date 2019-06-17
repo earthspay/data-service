@@ -1,4 +1,4 @@
-import { BigNumber } from '@waves/data-entities';
+import { BigNumber } from '@earths/data-entities';
 
 import { convertAmount, convertPrice } from '../satoshi';
 

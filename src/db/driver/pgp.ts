@@ -1,4 +1,4 @@
-import { BigNumber } from '@waves/data-entities';
+import { BigNumber } from '@earths/data-entities';
 import { compose, tail, init, split } from 'ramda';
 import { IMain } from 'pg-promise';
 import * as pgPromise from 'pg-promise';

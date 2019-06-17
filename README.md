@@ -1,12 +1,12 @@
-# Waves data service API
+# Earths data service API
 
 **⚠️ This service is currently in /v0. Breaking changes are coming in /v1 (also possible, but not likely, within /v0 releases). Please use with caution.**
 
 This is an API aimed at retrieving data from blockchain quickly and conveniently. We  support public APIs for: 
 - Mainnet
-  - [https://api.wavesplatform.com/v0/](https://api.wavesplatform.com/v0/)
+  - [https://api.earths.ga/v0/](https://api.earths.ga/v0/)
 - Testnet
-  - [https://api.testnet.wavesplatform.com/v0/](https://api.testnet.wavesplatform.com/v0/)
+  - [https://api.testnet.earths.ga/v0/](https://api.testnet.earths.ga/v0/)
 
 Visit `/docs` for Swagger documentation.
 
@@ -17,7 +17,7 @@ It is possible to create your own instance of this service. To do so, follow the
 
 #### Requirements
 
-1. PostgreSQL 10 database with a table stricture found in [wavesplatform/blockchain-postgres-sync](https://github.com/wavesplatform/blockchain-postgres-sync)
+1. PostgreSQL 10 database with a table stricture found in [earthspay/blockchain-postgres-sync](https://github.com/earthspay/blockchain-postgres-sync)
 2. Downloaded and continuously updated blockchain data in the database
 2. NodeJS or Docker for either running the service directly, or in a container
 
@@ -45,11 +45,11 @@ If you would like to use some other way of setting environment variables, just r
 ##### Docker
 1. Build a Docker image from the project root
    ```bash
-   docker build -t wavesplatform/data-service .
+   docker build -t earthspay/data-service .
    ```
 2. Run the container
    ```bash
-   docker run -p=<port>:3000 --env-file=variables.env wavesplatform/data-service
+   docker run -p=<port>:3000 --env-file=variables.env earthspay/data-service
    ```
       
 A server will start at `localhost:<port>` (used in the `docker run` command). Logs will be handled by Docker. Use any other Docker options if necessary.
@@ -73,8 +73,8 @@ If you decide to use NodeJS directly (without Docker), we recommend using a proc
 
 #### Daemons
 To add candles and pairs functionality the following Docker daemons must be used:
-- Candles — calculate candles for exchange transactions (see [description](https://hub.docker.com/r/wavesplatform/data-service-candles/))
-- Pairs — calculate last pairs for 24h exchange transactions (see [description](https://hub.docker.com/r/wavesplatform/data-service-pairs/))
+- Candles — calculate candles for exchange transactions (see [description](https://hub.docker.com/r/earthspay/data-service-candles/))
+- Pairs — calculate last pairs for 24h exchange transactions (see [description](https://hub.docker.com/r/earthspay/data-service-pairs/))
 
 
 #### General recommendations

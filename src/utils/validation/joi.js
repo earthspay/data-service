@@ -1,6 +1,6 @@
 const rawJoi = require('joi');
 
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@earths/data-entities');
 const { decode } = require('../../services/_common/pagination/cursor');
 const { base58: base58Regex, interval: intervalRegex } = require('../regex');
 const { interval } = require('../../types');

@@ -1,15 +1,15 @@
 import * as knex from 'knex';
 const pg = knex({ client: 'pg' });
 
-const selectVolumeWavesFromPairsCTE = pg({ d: 'pairs_cte' })
+const selectVolumeEarthsFromPairsCTE = pg({ d: 'pairs_cte' })
   .select(
     pg.raw(
-      `case when d.amount_asset_id='WAVES' then p.quote_volume / d.weighted_average_price when d.price_asset_id='WAVES' then p.quote_volume * d.weighted_average_price end as volume_waves`
+      `case when d.amount_asset_id='EARTHS' then p.quote_volume / d.weighted_average_price when d.price_asset_id='EARTHS' then p.quote_volume * d.weighted_average_price end as volume_earths`
     )
   )
-  .whereRaw(`(d.amount_asset_id=p.price_asset_id AND d.price_asset_id='WAVES')`)
+  .whereRaw(`(d.amount_asset_id=p.price_asset_id AND d.price_asset_id='EARTHS')`)
   .orWhereRaw(
-    `(d.price_asset_id=p.price_asset_id AND d.amount_asset_id='WAVES')`
+    `(d.price_asset_id=p.price_asset_id AND d.amount_asset_id='EARTHS')`
   );
 
 const selectExchanges = pg('txs_7')
@@ -35,8 +35,8 @@ const selectPairsCTE = pg
       weighted_average_price: pg.raw(
         'sum(e.amount * 10 ^(-a_dec.decimals) * e.price * 10 ^(-8 - p_dec.decimals + a_dec.decimals))/ sum(e.amount * 10 ^(-a_dec.decimals))'
       ),
-      volume_waves: pg.raw(
-        "case when amount_asset = 'WAVES' then sum(e.amount * 10 ^(-a_dec.decimals)) when price_asset = 'WAVES' then sum(e.amount * 10 ^(-a_dec.decimals) * e.price * 10 ^(-8 - p_dec.decimals + a_dec.decimals)) end"
+      volume_earths: pg.raw(
+        "case when amount_asset = 'EARTHS' then sum(e.amount * 10 ^(-a_dec.decimals)) when price_asset = 'EARTHS' then sum(e.amount * 10 ^(-a_dec.decimals) * e.price * 10 ^(-8 - p_dec.decimals + a_dec.decimals)) end"
       ),
       high: pg.raw('max(e.price * 10 ^(-8 - p_dec.decimals + a_dec.decimals))'),
       low: pg.raw('min(e.price * 10 ^(-8 - p_dec.decimals + a_dec.decimals))'),
@@ -55,8 +55,8 @@ const selectPairsCTE = pg
     'last_price',
     'volume',
     {
-      volume_waves: pg.raw(
-        `coalesce(volume_waves, (${selectVolumeWavesFromPairsCTE.toString()}))`
+      volume_earths: pg.raw(
+        `coalesce(volume_earths, (${selectVolumeEarthsFromPairsCTE.toString()}))`
       ),
     },
     'quote_volume',
